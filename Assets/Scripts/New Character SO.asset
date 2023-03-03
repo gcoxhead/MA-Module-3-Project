@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f26989f9759cac41864ea6e7fbf8995, type: 3}
+  m_Name: New Character SO
+  m_EditorClassIdentifier: 
+  SkinColour:
+  - {r: 0.8773585, g: 0.7526567, b: 0.48337486, a: 0}
+  - {r: 0.49056602, g: 0.33662605, b: 0.12680666, a: 0}
+  RightArm:
+  - {fileID: 4300002, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300006, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  LeftArm:
+  - {fileID: 4300000, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300004, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  RightCalf:
+  - {fileID: 4300010, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300014, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  LeftCalf:
+  - {fileID: 4300008, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300012, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  RightFoot:
+  - {fileID: 4300022, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300026, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  LeftFoot:
+  - {fileID: 4300020, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300024, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  RightForearm:
+  - {fileID: 4300030, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300034, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  LeftForearm:
+  - {fileID: 4300028, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300032, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Hair:
+  - {fileID: 4300056, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300058, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300112, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300114, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  RightHand:
+  - {fileID: 4300046, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300050, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  LeftHand:
+  - {fileID: 4300044, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300048, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Legs:
+  - {fileID: 4300036, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300038, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Torso:
+  - {fileID: 4300052, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300054, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Belt:
+  - {fileID: 4300118, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300116, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Cape:
+  - {fileID: 4300120, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300122, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  RightElbow:
+  - {fileID: 4300130, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300126, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  LeftElbow:
+  - {fileID: 4300128, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300124, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Eyebrows:
+  - {fileID: 4300132, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300134, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  RightKnee:
+  - {fileID: 4300142, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300138, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  LeftKnee:
+  - {fileID: 4300140, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300136, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  RightPauldron:
+  - {fileID: 4300150, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300146, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  LeftPauldron:
+  - {fileID: 4300148, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  - {fileID: 4300144, guid: 6aa8f6756ec685443847b09fc4fc149c, type: 3}
+  Shield:
+  - {fileID: -4480174611540196457, guid: 6f4cb632e4a06ef42a85b59ed9a92a09, type: 3}
+  - {fileID: 5986566303717356992, guid: 1226713c6646e9548afb19fdc8b8f598, type: 3}
+  - {fileID: 1489347788288388116, guid: 8844aa84249870041850ad3f9a6f8fe4, type: 3}
+  Sword:
+  - {fileID: 4300000, guid: d6c2f186f92c37e4b898255ecdb9d914, type: 3}
+  - {fileID: 4300000, guid: 304ddc9a98f658d48bcdfec783d86fc8, type: 3}
+  - {fileID: 4300000, guid: 5ea9424bc07b1b6478279129eb3813df, type: 3}
