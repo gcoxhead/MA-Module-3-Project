@@ -5,6 +5,7 @@ using UnityEngine;
 public class RayCast : MonoBehaviour
 {
     Camera _cam;
+
     [SerializeField]
     LayerMask mask;
 

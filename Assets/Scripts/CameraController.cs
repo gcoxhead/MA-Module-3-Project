@@ -6,13 +6,11 @@ using Cinemachine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
-
     private CinemachineVirtualCamera[] _vCams;
-    // Start is called before the first frame update
+    
     void Start()
     {
         ViewCamMenu();
-        
     }
 
   public void ViewCamMenu()
