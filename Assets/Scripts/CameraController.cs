@@ -22,6 +22,7 @@ public class CameraController : MonoBehaviour
         _vCams[2].enabled = false;
         _vCams[3].enabled = false;
         _vCams[4].enabled = false;
+        _vCams[5].enabled = false;
     }
 
     public void ViewCamChar()
@@ -59,5 +60,18 @@ public class CameraController : MonoBehaviour
         _vCams[2].enabled = false;
         _vCams[3].enabled = false;
         _vCams[4].enabled = true;
+        _vCams[5].enabled = false;
     }
+
+    public void ViewShopCam()
+    {
+        _vCams[0].enabled = false;
+        _vCams[1].enabled = false;
+        _vCams[2].enabled = false;
+        _vCams[3].enabled = false;
+        _vCams[4].enabled = false;
+        _vCams[5].enabled = true;
+    }
+
+
 }

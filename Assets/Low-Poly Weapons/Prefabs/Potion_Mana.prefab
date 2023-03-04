@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 431974}
   - component: {fileID: 3342860}
   - component: {fileID: 2353708}
-  m_Layer: 0
+  - component: {fileID: 263946705}
+  m_Layer: 9
   m_Name: Potion_Mana
-  m_TagString: Untagged
+  m_TagString: Speed Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &263946705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.21674065, y: 0.21674047, z: 0.8306627}
+  m_Center: {x: -0.000030570853, y: 0.0000000019282749, z: 0.05111661}

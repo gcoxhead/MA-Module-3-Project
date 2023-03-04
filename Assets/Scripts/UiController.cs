@@ -43,6 +43,7 @@ public class UiController : MonoBehaviour
         _UI[2].SetActive(false);
         _UI[3].SetActive(false);
         _UI[4].SetActive(false);
+        _UI[5].SetActive(false);
     }
     public void CharCustGUI()
     {
@@ -87,6 +88,18 @@ public class UiController : MonoBehaviour
         _UI[2].SetActive(false);
         _UI[3].SetActive(false);
         _UI[4].SetActive(true);
+        _UI[5].SetActive(false);
+
+    }
+    
+    public void ShopUI()
+    {
+        _UI[0].SetActive(false);
+        _UI[1].SetActive(false);
+        _UI[2].SetActive(false);
+        _UI[3].SetActive(false);
+        _UI[4].SetActive(false);
+        _UI[5].SetActive(true);
 
     }
 

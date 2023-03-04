@@ -15,6 +15,11 @@ TagManager:
   - Spike
   - EnemySword
   - Base
+  - Purple Potion
+  - Health Potion
+  - Speed Potion
+  - Power Potion
+  - Drinking Vessel
   layers:
   - Default
   - TransparentFX
@@ -25,7 +30,7 @@ TagManager:
   - Ground
   - Player
   - Base
-  - 
+  - RayCast
   - 
   - 
   - 
