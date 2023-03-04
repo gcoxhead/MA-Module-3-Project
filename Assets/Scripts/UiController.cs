@@ -46,11 +46,11 @@ public class UiController : MonoBehaviour
     }
     public void CharCustGUI()
     {
-        _UI[0].SetActive(true);
+        _UI[0].SetActive(false);
         _UI[1].SetActive(true);
         _UI[2].SetActive(false);
         _UI[3].SetActive(false);
-        _UI[4].SetActive(true);
+        _UI[4].SetActive(false);
     }
 
     public void ShieldGUI()
@@ -59,7 +59,7 @@ public class UiController : MonoBehaviour
         _UI[1].SetActive(false);
         _UI[2].SetActive(true);
         _UI[3].SetActive(false);
-        _UI[4].SetActive(true);
+        _UI[4].SetActive(false);
     }
 
     public void SwordGUI()
@@ -68,7 +68,7 @@ public class UiController : MonoBehaviour
         _UI[1].SetActive(false);
         _UI[2].SetActive(false);
         _UI[3].SetActive(true);
-        _UI[4].SetActive(true);
+        _UI[4].SetActive(false);
     }
 
    public void HUDActive()
