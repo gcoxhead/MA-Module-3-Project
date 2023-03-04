@@ -10,12 +10,16 @@ public class ShopBehaviour : MonoBehaviour
     //Variables
     private GameObject Player;
     private bool isShopping;
+    private int credits;
 
     [SerializeField]
     private UiController _uiController;
 
     [SerializeField]
     private CameraController _cameraController;
+
+    [SerializeField]
+    private GameBehaviour _gameBehaviour; 
 
     Ray ray;
     RaycastHit selection;
@@ -37,6 +41,7 @@ public class ShopBehaviour : MonoBehaviour
         //Price is deducted from player inventory credits
         //Item is addded into player inventory script
         OnMouseOver();
+       //credits
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,6 +57,7 @@ public class ShopBehaviour : MonoBehaviour
         {
             //Call trap method to create the circle trap
             enableShop();
+            //credits = 
             
            
         }

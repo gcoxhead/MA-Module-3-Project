@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class OnMouseOver : MonoBehaviour
 {
+
+    private void Update()
+    {
+
+       
+
+        
+    }
+
+
     void OnMouseHover()
     {
         //If your mouse hovers over the GameObject with the script attached, output this message
-        Debug.Log("Mouse is over GameObject.");
+        Debug.Log("Mouse is hovering over a GameObject.");
     }
     void OnMouseExit()
     {
