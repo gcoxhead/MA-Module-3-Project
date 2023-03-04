@@ -10,7 +10,14 @@ public class ShopBehaviour : MonoBehaviour
     //Variables
     private GameObject Player;
     private bool isShopping;
-    private int credits;
+    private int shopCredits;
+    private int cost;
+
+    [SerializeField]
+    private TMP_Text shopCreditText;
+
+    [SerializeField]
+    private TMP_Text dialogueText;
 
     [SerializeField]
     private UiController _uiController;
@@ -40,8 +47,9 @@ public class ShopBehaviour : MonoBehaviour
         //Logic for buying items
         //Price is deducted from player inventory credits
         //Item is addded into player inventory script
-        OnMouseOver();
+        //OnMouseOver();
        //credits
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,9 +65,7 @@ public class ShopBehaviour : MonoBehaviour
         {
             //Call trap method to create the circle trap
             enableShop();
-            //credits = 
             
-           
         }
 
     }
@@ -81,16 +87,20 @@ public class ShopBehaviour : MonoBehaviour
     {
         Debug.Log("Shop Enabled");
 
+        dialogueText.text = "Welcome to my shop. I hope you have deep pockets?";
+
         isShopping = true;
+
         _uiController.ShopUI();
+
         _cameraController.ViewShopCam();
-        //PlayerController Disabled
 
+        shopCredits = _gameBehaviour._credits;
 
+        Debug.Log("You have" + shopCredits + "Credits");
 
-
-
-
+        Debug.LogFormat("Credits:{0}", shopCredits);
+        shopCreditText.text = "Credits: " + shopCredits;
 
     }
 
@@ -109,5 +119,64 @@ public class ShopBehaviour : MonoBehaviour
         print(gameObject.name);
     }
 
+    public void BuySpeedPotion()
+    {
+        cost = 10;
+        if (shopCredits < cost)
+        {
+            dialogueText.text = "You fool, you are pennyless!!!";
+            Debug.Log("Not enough credits!");
+            return;
+        }
+
+        else
+        {
+            shopCredits -= cost;
+            shopCreditText.text = "Credits: " + shopCredits;
+            _gameBehaviour.Credits -= cost;
+            dialogueText.text = "Speed +10";
+
+            //add +5 to player speed for this level
+        }
+
+    }
+
+    public void BuyHealthPotion()
+    {
+        cost = 5;
+        if (shopCredits < cost)
+        {
+            dialogueText.text = "You fool, you are pennyless!!!";
+            Debug.Log("Not enough credits!");
+            return;
+        }
+        else
+        {
+            shopCredits -= cost;
+            shopCreditText.text = "Credits: " + shopCredits;
+            _gameBehaviour.Credits -= cost;
+            dialogueText.text = "Health +5";
+            //add +10 to player health for this level
+        }
+    }public void BuyPowerPotion()
+    {
+        cost = 15;
+        if (shopCredits < cost)
+        {
+            dialogueText.text = "You fool, you are pennyless!!!";
+            Debug.Log("Not enough credits!");
+            return;
+        }
+
+        else 
+        {
+            shopCredits -= cost;
+            shopCreditText.text = "Credits: " + shopCredits;
+            _gameBehaviour.Credits -= cost;
+            dialogueText.text = "Power +15";
+            //add +15 to players power for this level
+        }
+
+    }
 
 }

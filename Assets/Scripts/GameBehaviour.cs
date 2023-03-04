@@ -40,7 +40,7 @@ public class GameBehaviour : MonoBehaviour
     private int _playerHP = 100;
 
     [SerializeField]
-    private int _credits = 100;
+    public int _credits = 100;
 
     [SerializeField]
     public TMP_Text HealthText;
