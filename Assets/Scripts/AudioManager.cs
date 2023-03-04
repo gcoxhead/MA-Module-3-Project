@@ -1,4 +1,4 @@
-
+ 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource Wind;
     public AudioSource Click;
     public AudioSource CollectCoins;
+    public AudioSource Shop;
 
     public void playSword()
     {
@@ -30,6 +31,7 @@ public class AudioManager : MonoBehaviour
 
     public void playMusic()
     {
+        Shop.Stop();
         SceneMusic.Play();
     }    
 
@@ -43,5 +45,10 @@ public class AudioManager : MonoBehaviour
         CollectCoins.Play();
     }
 
+    public void playShop()
+    {
+        Shop.Play();
+        SceneMusic.Stop();
+    }
 }
 

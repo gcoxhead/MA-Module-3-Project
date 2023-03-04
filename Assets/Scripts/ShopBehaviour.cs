@@ -17,6 +17,9 @@ public class ShopBehaviour : MonoBehaviour
     private TMP_Text shopCreditText;
 
     [SerializeField]
+    private AudioManager audioBehaviour;
+
+    [SerializeField]
     private TMP_Text dialogueText;
 
     [SerializeField]
@@ -30,25 +33,18 @@ public class ShopBehaviour : MonoBehaviour
 
     Ray ray;
     RaycastHit selection;
-
-   
-   
+     
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.Find("Player");
-
-        
+                
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Logic for buying items
-        //Price is deducted from player inventory credits
-        //Item is addded into player inventory script
-        //OnMouseOver();
-       //credits
+       
 
     }
 
@@ -78,9 +74,7 @@ public class ShopBehaviour : MonoBehaviour
         {
             disableShop();
         }
-        
-        
-        
+               
     }
 
     private void enableShop()
@@ -101,6 +95,7 @@ public class ShopBehaviour : MonoBehaviour
 
         Debug.LogFormat("Credits:{0}", shopCredits);
         shopCreditText.text = "Credits: " + shopCredits;
+        audioBehaviour.playShop();
 
     }
 
@@ -110,6 +105,7 @@ public class ShopBehaviour : MonoBehaviour
         isShopping = false;
         _uiController.GamePlayHUD();
         _cameraController.ViewPlayGameCam();
+        audioBehaviour.playMusic();
 
         //PlayerController enabled
     }
@@ -158,7 +154,9 @@ public class ShopBehaviour : MonoBehaviour
             dialogueText.text = "Health +5";
             //add +10 to player health for this level
         }
-    }public void BuyPowerPotion()
+
+    }
+    public void BuyPowerPotion()
     {
         cost = 15;
         if (shopCredits < cost)
