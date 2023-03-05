@@ -107,7 +107,7 @@ public class ShopBehaviour : MonoBehaviour
         _cameraController.ViewPlayGameCam();
         audioBehaviour.playMusic();
 
-        //PlayerController enabled
+        
     }
 
     void OnMouseOver()

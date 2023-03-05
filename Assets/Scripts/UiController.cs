@@ -16,24 +16,42 @@ public class UiController : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            MenuUI();
+            DisableInventory();
         }
     }
 
     [SerializeField]
 
     private GameObject[] _UI;
+    private bool inventoryActive = false ;
+    
     // Start is called before the first frame update
 
     // Start is called before the first frame update
+    
+    
     void Start()
     {
-        MenuUI();
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            if (!inventoryActive)
+            {
+                EnableInventory();
+            }
+            else
+            {
+                DisableInventory();
+            }
+
+        }
 
     }
     public void MenuUI()
@@ -102,6 +120,22 @@ public class UiController : MonoBehaviour
         _UI[5].SetActive(true);
 
     }
+
+    public void EnableInventory()
+    {
+
+        _UI[6].SetActive(true);
+        inventoryActive = true;
+    }
+
+    public void DisableInventory()
+    {
+        _UI[6].SetActive(false);
+        inventoryActive = false;
+    }
+
+
+
 
 }
 

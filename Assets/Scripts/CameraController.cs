@@ -59,7 +59,23 @@ public class CameraController : MonoBehaviour
         _vCams[3].enabled = false;
         _vCams[4].enabled = true;
         _vCams[5].enabled = false;
+        _vCams[6].enabled = false;
     }
+
+
+    public void ViewCloseGameCam()
+    {
+        _vCams[0].enabled = false;
+        _vCams[1].enabled = false;
+        _vCams[2].enabled = false;
+        _vCams[3].enabled = false;
+        _vCams[4].enabled = false;
+        _vCams[5].enabled = false;
+        _vCams[6].enabled = true;
+    }
+
+
+
 
     public void ViewShopCam()
     {
