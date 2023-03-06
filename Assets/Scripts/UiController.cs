@@ -25,12 +25,15 @@ public class UiController : MonoBehaviour
 
     private GameObject[] _UI;
     private bool inventoryActive = false ;
-    
+
+    [SerializeField]
+    private InventoryManager inventoryManager;
+
     // Start is called before the first frame update
 
     // Start is called before the first frame update
-    
-    
+
+
     void Start()
     {
         
@@ -44,6 +47,7 @@ public class UiController : MonoBehaviour
         {
             if (!inventoryActive)
             {
+                inventoryManager.ListItems();
                 EnableInventory();
             }
             else
