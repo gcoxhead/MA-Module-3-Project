@@ -7,6 +7,7 @@ public class EnemyFSM : MonoBehaviour
     public enum EnemyState {  GoToBase, AttackBase, ChasePlayer, AttackPlayer}
 
     public EnemyState currentState;
+    public float distance;
 
     private void Update()
     {
@@ -52,6 +53,7 @@ public class EnemyFSM : MonoBehaviour
         }
 
         float distanceToPlayer = Vector3.Distance(transform.position, sightSensor.detectedObject.transform.position);
+        distance = distanceToPlayer;
         if (distanceToPlayer <= playerAttackDistance)
         {
             currentState = EnemyState.AttackPlayer;

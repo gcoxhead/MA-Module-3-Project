@@ -33,6 +33,8 @@ public class Sight : MonoBehaviour
             {
                 if (!Physics.Linecast(transform.position, collider.bounds.center, out RaycastHit hit, obstaclesLayers))
                 {
+                    float dist = Vector3.Distance(collider.transform.position, transform.position);
+                    print("Distance to other: " + dist);
 
                     Debug.DrawLine(transform.position, collider.bounds.center, Color.green);
                     detectedObject = collider;

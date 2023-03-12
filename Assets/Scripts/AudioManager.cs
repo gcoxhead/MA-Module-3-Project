@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource Click;
     public AudioSource CollectCoins;
     public AudioSource Shop;
+    public AudioSource ShopWeapon;
 
     public void playSword()
     {
@@ -32,6 +33,7 @@ public class AudioManager : MonoBehaviour
     public void playMusic()
     {
         Shop.Stop();
+        ShopWeapon.Stop();
         SceneMusic.Play();
     }    
 
@@ -49,6 +51,13 @@ public class AudioManager : MonoBehaviour
     {
         Shop.Play();
         SceneMusic.Stop();
+    }
+
+    public void playShopWeapons()
+    {
+        ShopWeapon.Play();
+        SceneMusic.Stop();
+
     }
 }
 
