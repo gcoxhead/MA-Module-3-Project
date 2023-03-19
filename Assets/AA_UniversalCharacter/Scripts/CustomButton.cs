@@ -9,8 +9,14 @@
 
 using UnityEngine;
 using System.Collections;
-using UnityEditor;
+using System.Collections.Generic;
 
+#if UNITY_EDITOR // => Ignore from here to next endif if not in editor
+using UnityEditor;
+#endif
+
+
+#if UNITY_EDITOR // => Ignore from here to next endif if not in editor
 [CustomEditor(typeof(ModulesShaker))]
 public class customButton : Editor
 {
@@ -43,3 +49,4 @@ public class customButton : Editor
     }
 
 }
+#endif

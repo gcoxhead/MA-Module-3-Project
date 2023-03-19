@@ -24,6 +24,7 @@ public class CameraController : MonoBehaviour
         _vCams[5].enabled = false;
         _vCams[6].enabled = false;
         _vCams[7].enabled = false;
+        _vCams[8].enabled = false;
     }
 
     public void ViewCamChar()
@@ -36,6 +37,7 @@ public class CameraController : MonoBehaviour
         _vCams[5].enabled = false;
         _vCams[6].enabled = false;
         _vCams[7].enabled = false;
+        _vCams[8].enabled = false;
     }
 
     public void ViewCamShields()
@@ -48,6 +50,7 @@ public class CameraController : MonoBehaviour
         _vCams[5].enabled = false;
         _vCams[6].enabled = false;
         _vCams[7].enabled = false;
+        _vCams[8].enabled = false;
     }
 
     public void ViewCamSwords()
@@ -60,6 +63,7 @@ public class CameraController : MonoBehaviour
         _vCams[5].enabled = false;
         _vCams[6].enabled = false;
         _vCams[7].enabled = false;
+        _vCams[8].enabled = false;
 
     }
 
@@ -73,6 +77,7 @@ public class CameraController : MonoBehaviour
         _vCams[5].enabled = false;
         _vCams[6].enabled = false;
         _vCams[7].enabled = false;
+        _vCams[8].enabled = false;
     }
 
 
@@ -86,6 +91,7 @@ public class CameraController : MonoBehaviour
         _vCams[5].enabled = false;
         _vCams[6].enabled = true;
         _vCams[7].enabled = false;
+        _vCams[8].enabled = false;
     }
 
 
@@ -101,6 +107,7 @@ public class CameraController : MonoBehaviour
         _vCams[5].enabled = true;
         _vCams[6].enabled = false;
         _vCams[7].enabled = false;
+        _vCams[8].enabled = false;
     }
     
     public void ViewShopWeaponCam()
@@ -113,7 +120,19 @@ public class CameraController : MonoBehaviour
         _vCams[5].enabled = false;
         _vCams[6].enabled = false;
         _vCams[7].enabled = true;
+        _vCams[8].enabled = false;
     }
 
-
+    public void ViewCauldronCam()
+    {
+        _vCams[0].enabled = false;
+        _vCams[1].enabled = false;
+        _vCams[2].enabled = false;
+        _vCams[3].enabled = false;
+        _vCams[4].enabled = false;
+        _vCams[5].enabled = false;
+        _vCams[6].enabled = false;
+        _vCams[7].enabled = false;
+        _vCams[8].enabled = true;
+    }
 }

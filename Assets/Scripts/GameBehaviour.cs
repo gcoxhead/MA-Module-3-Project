@@ -31,7 +31,7 @@ public class GameBehaviour : MonoBehaviour
     public HealthBar healthBar;
 
     [SerializeField]
-    public int MaxItems = 1000;
+    public int MaxItems = 3;
 
     [SerializeField] 
     private int _itemsCollected = 0;
@@ -53,12 +53,14 @@ public class GameBehaviour : MonoBehaviour
 
     [SerializeField]
     public TMP_Text CrText;
+
+    public bool spellEnabled = false;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        //ItemText.text += _itemsCollected;
+        
         HealthText.text = "Health:"; //+ _playerHP;
         CrText.text = ""+ _credits;
     }
@@ -74,13 +76,15 @@ public class GameBehaviour : MonoBehaviour
 
             if (_itemsCollected >= MaxItems)
             {
-                ProgressText.text = "You've found all the items!";
+                ProgressText.text = "You've found all the potions! Unlock excaliber";
                 //NextSceneButton.gameObject.SetActive(true);
-                Time.timeScale = 0f;
+                spellEnabled = true;
+                //Time.timeScale = 0f;
             }
             else
             {
-                ProgressText.text = "Item found, only " + (MaxItems - _itemsCollected) + " more!";
+                ProgressText.text = "You've found a potion, only " + (MaxItems - _itemsCollected) + " left!";
+                spellEnabled = false;
             }
         }
     }

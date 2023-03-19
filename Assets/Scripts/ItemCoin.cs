@@ -10,7 +10,7 @@ public class ItemCoin : MonoBehaviour
     public ParticleSystem particleSystem;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         GameManager = GameObject.Find("Game Manager").GetComponent<GameBehaviour>();
         coin = GameObject.FindWithTag("Coin");

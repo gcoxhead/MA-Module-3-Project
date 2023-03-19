@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR // => Ignore from here to next endif if not in editor
 using UnityEditor;
+#endif
 
 public class CharacterCustomiser : MonoBehaviour
 {
@@ -286,6 +288,8 @@ public class CharacterCustomiser : MonoBehaviour
         }
     }
 }
+
+#if UNITY_EDITOR // => Ignore from here to next endif if not in editor
 // Custom tool created that provides functionality in the inspector to create random character set-up.
 [CustomEditor(typeof(CharacterCustomiser))]
 public class CustomiserEditor : Editor
@@ -301,3 +305,4 @@ public class CustomiserEditor : Editor
         }
     }
 }
+#endif
