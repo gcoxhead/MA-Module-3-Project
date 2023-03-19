@@ -12,17 +12,14 @@ public class ItemExcaliber: MonoBehaviour
     private GameObject _excaliber;
 
     [SerializeField] 
-    private AudioSource _collectExcaliber;
-
-    [SerializeField]
-    private AudioSource _questCompleteMusic;
-
-    [SerializeField] 
     private
     GameObject _excaliberParticles;
 
     [SerializeField]
     public TMP_Text ProgressText;
+
+    [SerializeField]
+    private AudioManager audioBehaviour;
 
     // Start is called before the first frame update
     void Awake()
@@ -35,18 +32,25 @@ public class ItemExcaliber: MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Destroy(this.transform.gameObject);
+
+            PlayParticles();
+            
             Debug.Log("Excaliber Collected!");
             //GameManager.Items += 1;
             ProgressText.text = "Quest Complete!";
 
-            _collectExcaliber.Play();
-            _questCompleteMusic.Play();
-
+            audioBehaviour.playQuestComplete();
+            
             Instantiate(_excaliberParticles, gameObject.transform.position, Quaternion.identity);
-
+            Destroy(this.transform.gameObject);
         }
 
 
+    }
+
+    void PlayParticles()
+    {
+        Instantiate(_excaliberParticles, gameObject.transform.position, Quaternion.identity);
+        Debug.Log("Excaliber particles Played");
     }
 }

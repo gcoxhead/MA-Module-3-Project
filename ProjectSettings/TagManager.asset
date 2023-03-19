@@ -21,6 +21,8 @@ TagManager:
   - Power Potion
   - Drinking Vessel
   - ShopWeapons
+  - Excaliber
+  - Potion
   layers:
   - Default
   - TransparentFX
