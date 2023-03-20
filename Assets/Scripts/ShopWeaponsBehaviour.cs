@@ -61,7 +61,7 @@ public class ShopWeaponsBehaviour : MonoBehaviour
         {
             _cameraController.ViewShopWeaponCam();
             audioBehaviour.playShopWeapons();
-            //enableShop();
+            _uiController.WeaponShopUI();
 
         }
 
@@ -76,6 +76,12 @@ public class ShopWeaponsBehaviour : MonoBehaviour
             _cameraController.ViewPlayGameCam();
             
             audioBehaviour.playMusic();
+
+            _uiController.GamePlayHUD();
+
+            isShopping = false;
+
+            Debug.Log("Shop Disabled");
 
             //disableShop();
         }
@@ -101,16 +107,13 @@ public class ShopWeaponsBehaviour : MonoBehaviour
         Debug.LogFormat("Credits:{0}", shopCredits);
         shopCreditText.text = "Credits: " + shopCredits;
         audioBehaviour.playShopWeapons();
+        _uiController.WeaponShopUI();
 
     }
 
     private void disableShop()
     {
-        Debug.Log("Shop Disabled");
-        isShopping = false;
-        _uiController.GamePlayHUD();
-        _cameraController.ViewPlayGameCam();
-        audioBehaviour.playMusic();
+        
 
         
     }

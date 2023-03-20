@@ -11,6 +11,12 @@ public class ItemExcaliber: MonoBehaviour
     [SerializeField]
     private GameObject _excaliber;
 
+    [SerializeField]
+    private GameObject _playerWeapon;
+
+    [SerializeField]
+    private GameObject _playerExcaliberWeapon;
+
     [SerializeField] 
     private
     GameObject _excaliberParticles;
@@ -34,6 +40,8 @@ public class ItemExcaliber: MonoBehaviour
         {
 
             PlayParticles();
+            _playerWeapon.SetActive(false);
+            _playerExcaliberWeapon.SetActive(true);
             
             Debug.Log("Excaliber Collected!");
             //GameManager.Items += 1;

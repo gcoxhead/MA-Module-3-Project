@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8387228470495943336
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6011609637800904330, guid: 3441d87567de6194d8f61d480295884f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011609637800904330, guid: 3441d87567de6194d8f61d480295884f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011609637800904330, guid: 3441d87567de6194d8f61d480295884f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011609637800904330, guid: 3441d87567de6194d8f61d480295884f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.245
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011609637800904330, guid: 3441d87567de6194d8f61d480295884f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.15468696
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011609637800904330, guid: 3441d87567de6194d8f61d480295884f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.28302208
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011609637800904330, guid: 3441d87567de6194d8f61d480295884f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.73966616
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011609637800904330, guid: 3441d87567de6194d8f61d480295884f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5906476
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011609637800904330, guid: 3441d87567de6194d8f61d480295884f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 51.832
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011609637800904330, guid: 3441d87567de6194d8f61d480295884f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -114.311
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011609637800904330, guid: 3441d87567de6194d8f61d480295884f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 76.709
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014876343410430344, guid: 3441d87567de6194d8f61d480295884f, type: 3}
+      propertyPath: m_Name
+      value: Spiked Halberd
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3441d87567de6194d8f61d480295884f, type: 3}
