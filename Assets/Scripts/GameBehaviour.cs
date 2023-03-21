@@ -65,6 +65,15 @@ public class GameBehaviour : MonoBehaviour
         CrText.text = ""+ _credits;
     }
 
+    private void Update()
+    {
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+
+    }
+
     public int Items
     {
         get { return _itemsCollected; }
