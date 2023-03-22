@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 3
   itemName: Green Potion
   value: 5
-  icon: {fileID: 21300000, guid: 3fa763970af571f4a964fd3a88a96578, type: 3}
+  icon: {fileID: 21300000, guid: 8cd48a8d8ff05aa4f9a66ded76309360, type: 3}

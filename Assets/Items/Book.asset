@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Book
   m_EditorClassIdentifier: 
   id: 0
-  itemName: 
+  itemName: Ancient Book
   value: 0
-  icon: {fileID: 21300000, guid: 11277a3f23988ec47908362d708edaa8, type: 3}
+  icon: {fileID: 21300000, guid: 7b09e7f77907ead47a2f035c0d6483ba, type: 3}
