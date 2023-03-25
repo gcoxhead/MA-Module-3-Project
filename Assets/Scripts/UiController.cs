@@ -150,6 +150,19 @@ public class UiController : MonoBehaviour
 
     }
 
+    public void WinScreen()
+    {
+        _UI[0].SetActive(false);
+        _UI[1].SetActive(false);
+        _UI[2].SetActive(false);
+        _UI[3].SetActive(false);
+        _UI[4].SetActive(false);
+        _UI[5].SetActive(false);
+        _UI[7].SetActive(false);
+        _UI[8].SetActive(false);
+        _UI[9].SetActive(true);
+    }
+
     public void EnableInventory()
     {
 
