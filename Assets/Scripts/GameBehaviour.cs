@@ -67,10 +67,10 @@ public class GameBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey("escape"))
-        {
-            Application.Quit();
-        }
+        //if (Input.GetKey("escape"))
+       // {
+            //Application.Quit();
+        //}
 
     }
 
@@ -139,8 +139,13 @@ public class GameBehaviour : MonoBehaviour
         }
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
-    /*public void RestartScene()
+
+    public void RestartScene()
 
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex );
@@ -148,11 +153,11 @@ public class GameBehaviour : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void NextScene()
+    //public void NextScene()
 
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+   // {
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-        Time.timeScale = 1f;
-    }*/
+      //  Time.timeScale = 1f;
+    //}*/
 }

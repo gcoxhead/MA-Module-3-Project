@@ -26,6 +26,7 @@ public class UiController : MonoBehaviour
     private GameObject[] _UI;
     private bool inventoryActive = false;
     private bool questUiActive = false;
+    private bool pauseUiActive = false;
 
     [SerializeField]
     private InventoryManager inventoryManager;
@@ -45,7 +46,7 @@ public class UiController : MonoBehaviour
             }
 
         }
-
+        
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (!questUiActive)
@@ -62,6 +63,19 @@ public class UiController : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown("escape"))
+        {
+            if (!pauseUiActive)
+            {
+                EnablePauseUI();
+            }
+
+            else
+            {
+                DisablePauseUI();
+            }
+        }
+
     }
     public void MenuUI()
     {
@@ -74,6 +88,7 @@ public class UiController : MonoBehaviour
         _UI[5].SetActive(false);
         _UI[7].SetActive(false);
         _UI[8].SetActive(true);
+        _UI[10].SetActive(false);
         questUiActive = true;
     }
     public void CharCustGUI()
@@ -84,6 +99,7 @@ public class UiController : MonoBehaviour
         _UI[3].SetActive(false);
         _UI[4].SetActive(false);
         _UI[8].SetActive(false);
+        _UI[10].SetActive(false);
         questUiActive = false;
     }
 
@@ -114,6 +130,7 @@ public class UiController : MonoBehaviour
         _UI[4].SetActive(true);
         _UI[5].SetActive(false);
         _UI[7].SetActive(false);
+        _UI[10].SetActive(false);
     }
 
     public void GamePlayHUD()
@@ -125,6 +142,7 @@ public class UiController : MonoBehaviour
         _UI[4].SetActive(true);
         _UI[5].SetActive(false);
         _UI[7].SetActive(false);
+        _UI[10].SetActive(false);
     }
     
     public void ShopUI()
@@ -161,6 +179,28 @@ public class UiController : MonoBehaviour
         _UI[7].SetActive(false);
         _UI[8].SetActive(false);
         _UI[9].SetActive(true);
+    }
+
+    public void EnablePauseUI()
+    {
+        _UI[0].SetActive(false);
+        _UI[1].SetActive(false);
+        _UI[2].SetActive(false);
+        _UI[3].SetActive(false);
+        _UI[4].SetActive(false);
+        _UI[5].SetActive(false);
+        _UI[6].SetActive(false);
+        _UI[7].SetActive(false);
+        _UI[8].SetActive(false);
+        _UI[9].SetActive(false);
+        _UI[10].SetActive(true);
+        pauseUiActive = true;
+    }
+    public void DisablePauseUI()
+    {
+        GamePlayHUD();
+        
+        pauseUiActive = false;
     }
 
     public void EnableInventory()

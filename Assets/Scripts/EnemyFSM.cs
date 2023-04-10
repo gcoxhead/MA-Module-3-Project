@@ -4,19 +4,40 @@ using UnityEngine;
 
 public class EnemyFSM : MonoBehaviour
 {
-    public enum EnemyState {  GoToBase, AttackBase, ChasePlayer, AttackPlayer}
+    public enum EnemyState {  Patrol, AttackBase, ChasePlayer, AttackPlayer}
 
     public EnemyState currentState;
+
     public float distance;
+    public float distanceToPlayer;
+    public bool isChasing;
+    public bool isAttacking;
+    public bool isPatrolling;
+
+    private void Start()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, sightSensor.detectedObject.transform.position);
+        distance = distanceToPlayer;
+        currentState = EnemyState.Patrol;
+    }
 
     private void Update()
     {
-        if (currentState == EnemyState.GoToBase)
-            GoToBase();
-        else if (currentState == EnemyState.AttackBase)
-            AttackBase();
+        float distanceToPlayer = Vector3.Distance(transform.position, sightSensor.detectedObject.transform.position);
+        distance = distanceToPlayer;
+
+        if (currentState == EnemyState.Patrol)
+        {
+            Patrol();
+        }
+
+        //else if (currentState == EnemyState.AttackBase)
+        
+           // AttackBase();
+
         else if (currentState == EnemyState.ChasePlayer)
             ChasePlayer();
+
         else if (currentState == EnemyState.AttackPlayer)
             AttackPlayer();
     }
@@ -25,35 +46,40 @@ public class EnemyFSM : MonoBehaviour
     public Transform baseTransform;
     public float baseAttackDistance;
     public float playerAttackDistance;
+    public float playerChaseDistance;
 
-    void GoToBase()
+    void Patrol()
     {
+        isPatrolling = true;
         if (sightSensor.detectedObject != null)
         {
             currentState = EnemyState.ChasePlayer;
 
             float distanceToBase = Vector3.Distance(transform.position, baseTransform.position);
+
             if (distanceToBase <= baseAttackDistance)
                 currentState = EnemyState.AttackBase;
         }
         Debug.Log("Go To Base");
     } 
     
-    void AttackBase()
-    {
-        Debug.Log("Attack Base!");
-    }
+    //void AttackBase()
+    //{
+       // Debug.Log("Attack Base!");
+    //}
 
     void ChasePlayer()
     {
         if(sightSensor.detectedObject == null)
         {
-            currentState = EnemyState.GoToBase;
+            currentState = EnemyState.Patrol;
             return;
         }
 
         float distanceToPlayer = Vector3.Distance(transform.position, sightSensor.detectedObject.transform.position);
+
         distance = distanceToPlayer;
+
         if (distanceToPlayer <= playerAttackDistance)
         {
             currentState = EnemyState.AttackPlayer;
@@ -66,7 +92,7 @@ public class EnemyFSM : MonoBehaviour
     {
         if (sightSensor.detectedObject == null)
         {
-            currentState = EnemyState.GoToBase;
+            currentState = EnemyState.Patrol;
             return;
         }
 
@@ -80,11 +106,13 @@ public class EnemyFSM : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        //Draw a cyan wire sphere to show boundary of enemy sight to trigger an attack player.
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, playerAttackDistance);
 
+        //Draw a magenta wire sphere to show boundary of enemy sight to trigger enemy to chase player.
         Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(transform.position, baseAttackDistance);
+        Gizmos.DrawWireSphere(transform.position, playerChaseDistance);
     }
 
 
