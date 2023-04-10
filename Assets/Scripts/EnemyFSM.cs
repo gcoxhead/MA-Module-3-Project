@@ -1,108 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyFSM : MonoBehaviour
 {
-    public enum EnemyState {  Patrol, AttackBase, ChasePlayer, AttackPlayer}
+    public enum EnemyState {  Patrol, ChasePlayer, AttackPlayer}
 
     public EnemyState currentState;
-
+    public NavMeshAgent navMeshAgent;
     public float distance;
     public float distanceToPlayer;
-    public bool isChasing;
-    public bool isAttacking;
-    public bool isPatrolling;
+    public Sight sightSensor;
+    public float playerAttackDistance;
+    public float playerChaseDistance;
 
     private void Start()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, sightSensor.detectedObject.transform.position);
+        distanceToPlayer = Vector3.Distance(transform.position, sightSensor.detectedObject.transform.position);
         distance = distanceToPlayer;
         currentState = EnemyState.Patrol;
     }
 
     private void Update()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, sightSensor.detectedObject.transform.position);
-        distance = distanceToPlayer;
+        distanceToPlayer = Vector3.Distance(transform.position, sightSensor.detectedObject.transform.position);
 
-        if (currentState == EnemyState.Patrol)
-        {
-            Patrol();
-        }
-
-        //else if (currentState == EnemyState.AttackBase)
-        
-           // AttackBase();
-
-        else if (currentState == EnemyState.ChasePlayer)
-            ChasePlayer();
-
-        else if (currentState == EnemyState.AttackPlayer)
-            AttackPlayer();
-    }
-
-    public Sight sightSensor;
-    public Transform baseTransform;
-    public float baseAttackDistance;
-    public float playerAttackDistance;
-    public float playerChaseDistance;
-
-    void Patrol()
-    {
-        isPatrolling = true;
-        if (sightSensor.detectedObject != null)
-        {
-            currentState = EnemyState.ChasePlayer;
-
-            float distanceToBase = Vector3.Distance(transform.position, baseTransform.position);
-
-            if (distanceToBase <= baseAttackDistance)
-                currentState = EnemyState.AttackBase;
-        }
-        Debug.Log("Go To Base");
-    } 
-    
-    //void AttackBase()
-    //{
-       // Debug.Log("Attack Base!");
-    //}
-
-    void ChasePlayer()
-    {
-        if(sightSensor.detectedObject == null)
-        {
-            currentState = EnemyState.Patrol;
-            return;
-        }
-
-        float distanceToPlayer = Vector3.Distance(transform.position, sightSensor.detectedObject.transform.position);
-
-        distance = distanceToPlayer;
-
-        if (distanceToPlayer <= playerAttackDistance)
-        {
-            currentState = EnemyState.AttackPlayer;
-        }
-
-        Debug.Log("Chase Player!");
-    }
-
-        void AttackPlayer()
-    {
         if (sightSensor.detectedObject == null)
         {
             currentState = EnemyState.Patrol;
+            navMeshAgent.speed = 1;
+
             return;
+            
         }
 
-        float distanceToPlayer = Vector3.Distance(transform.position, sightSensor.detectedObject.transform.position);
-        
-        if (distanceToPlayer> playerAttackDistance* 1.1f)
-            currentState = EnemyState.ChasePlayer;
+        else if (distanceToPlayer > playerChaseDistance)
+        {
+            currentState = EnemyState.Patrol;
+            navMeshAgent.speed = 1;
+        }
 
-        Debug.Log("Attack Player!");
+        else if (distanceToPlayer < playerAttackDistance)
+        {
+            currentState = EnemyState.AttackPlayer;
+            navMeshAgent.speed = 4;
+        }
+        
+        else if (distanceToPlayer>playerAttackDistance && distanceToPlayer<playerChaseDistance)
+        {
+                currentState = EnemyState.ChasePlayer;
+                navMeshAgent.speed = 2;
+                     
+        }
+        
     }
+      
+
+   /* void Patrol()
+     
+    /*void ChasePlayer()
+   
+
+       /* void AttackPlayer()
+            
+    }*/
 
     private void OnDrawGizmos()
     {
