@@ -37,6 +37,7 @@ public class AnimationStateController : MonoBehaviour
         CheckFireInput();
         CheckMeleeAttack();
         CheckPlayerHealth();
+        CheckHasExcaliber();
         
 
     }
@@ -154,6 +155,18 @@ public class AnimationStateController : MonoBehaviour
         }
         else
             animator.SetBool("isDead", false);
+    }
+
+    public void CheckHasExcaliber()
+    {
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            animator.SetBool("hasExcaliber", true);
+
+            playerDeath.Play();
+        }
+        else
+            animator.SetBool("hasExcaliber", false);
     }
 }
 
