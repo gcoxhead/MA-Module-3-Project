@@ -24,25 +24,34 @@ public class AnimationStateController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey("up"))
-        {
-            animator.SetBool("isRunning", true);
-            Debug.Log("Player running!");
-        }
+        CheckInputs();
 
-        if (!Input.GetKey("up"))
-        {
-            animator.SetBool("isRunning", false);
-        }
+    }
+    public void CheckInputs()
+    {
+        CheckForwardInput();
 
-        if (Input.GetKey("down"))
+        //Check for backward input key
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             animator.SetBool("isBackward", true);
         }
-        if (!Input.GetKey("down"))
+        if (!Input.GetKey(KeyCode.DownArrow))
         {
             animator.SetBool("isBackward", false);
         }
+
+        //Check for backward input key
+        if (Input.GetKey(KeyCode.S))
+        {
+            animator.SetBool("isBackward", true);
+        }
+        if (!Input.GetKey(KeyCode.S))
+        {
+            animator.SetBool("isBackward", false);
+        }
+
+
 
         if (Input.GetKey(KeyCode.J))
         {
@@ -53,7 +62,7 @@ public class AnimationStateController : MonoBehaviour
         {
             animator.SetBool("isJumping", false);
         }
-        
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetBool("isCastingSpell", true);
@@ -72,9 +81,49 @@ public class AnimationStateController : MonoBehaviour
         }
 
         if (!Input.GetKeyDown(KeyCode.Z))
-          animator.SetBool("isAttack", false);
+        {
+            animator.SetBool("isAttack", false);
+        }
+
+    }
+    public void CheckForwardInput()
+    {
+        
+        //Check for forward input key
+        if (Input.GetKey(KeyCode.UpArrow)|| Input.GetKey(KeyCode.W))
+            {
+               animator.SetBool("isRunning", true);
+               Debug.Log("Player running!");
+            }     
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }        
+
+     }
+    public void CheckBackwardInput()
+    {
+        //Check for backward input key
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            animator.SetBool("isBackward", true);
+        }
+        if (!Input.GetKey(KeyCode.DownArrow))
+        {
+            animator.SetBool("isBackward", false);
+        }
+
+        //Check for backward input key
+        if (Input.GetKey(KeyCode.S))
+        {
+            animator.SetBool("isBackward", true);
+        }
+        if (!Input.GetKey(KeyCode.S))
+        {
+            animator.SetBool("isBackward", false);
         }
     }
+}
 
 
 
