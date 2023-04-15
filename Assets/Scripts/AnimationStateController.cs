@@ -10,6 +10,8 @@ public class AnimationStateController : MonoBehaviour
     // Audio Sfx for animations
     public AudioSource sword;
     public AudioSource castSpell;
+    public AudioSource takeDamage;
+    public AudioSource playerDeath;
 
     //Volume 
     public float volume = 1.0f;
@@ -30,60 +32,12 @@ public class AnimationStateController : MonoBehaviour
     public void CheckInputs()
     {
         CheckForwardInput();
-
-        //Check for backward input key
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            animator.SetBool("isBackward", true);
-        }
-        if (!Input.GetKey(KeyCode.DownArrow))
-        {
-            animator.SetBool("isBackward", false);
-        }
-
-        //Check for backward input key
-        if (Input.GetKey(KeyCode.S))
-        {
-            animator.SetBool("isBackward", true);
-        }
-        if (!Input.GetKey(KeyCode.S))
-        {
-            animator.SetBool("isBackward", false);
-        }
-
-
-
-        if (Input.GetKey(KeyCode.J))
-        {
-            animator.SetBool("isJumping", true);
-        }
-
-        if (!Input.GetKey(KeyCode.J))
-        {
-            animator.SetBool("isJumping", false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            animator.SetBool("isCastingSpell", true);
-            castSpell.Play();
-        }
-
-        if (!Input.GetKeyDown(KeyCode.Space))
-        {
-            animator.SetBool("isCastingSpell", false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            animator.SetBool("isAttack", true);
-            sword.Play();
-        }
-
-        if (!Input.GetKeyDown(KeyCode.Z))
-        {
-            animator.SetBool("isAttack", false);
-        }
+        CheckBackwardInput();
+        CheckJumpInput();
+        CheckFireInput();
+        CheckMeleeAttack();
+        CheckPlayerHealth();
+        
 
     }
     public void CheckForwardInput()
@@ -104,24 +58,102 @@ public class AnimationStateController : MonoBehaviour
     public void CheckBackwardInput()
     {
         //Check for backward input key
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            animator.SetBool("isBackward", true);
-        }
-        if (!Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow)|| Input.GetKey(KeyCode.S))
+            {
+                animator.SetBool("isBackward", true);
+                Debug.Log("Player moving Backward!");
+            }
+        else
         {
             animator.SetBool("isBackward", false);
         }
 
-        //Check for backward input key
-        if (Input.GetKey(KeyCode.S))
+    }
+
+    public void CheckRotationInput()
+    {
+        CheckLeftInput();
+        CheckRightInput();
+
+        void CheckLeftInput()
         {
-            animator.SetBool("isBackward", true);
+
+            //Check for rotation input key
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+            {
+                animator.SetBool("isTurningLeft", true);
+                Debug.Log("Player turning left!");
+            }
+            else
+            {
+                animator.SetBool("isTurningLeft", false);
+            }
         }
-        if (!Input.GetKey(KeyCode.S))
+
+        void CheckRightInput()
         {
-            animator.SetBool("isBackward", false);
+
+            //Check for rotation input key
+            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+            {
+                animator.SetBool("isTurningRight", true);
+                Debug.Log("Player turning right!");
+            }
+            else
+            {
+                animator.SetBool("isTurningRight", false);
+            }
         }
+    }
+    public void CheckJumpInput()
+    {
+        if (Input.GetKey(KeyCode.J))
+        {
+            animator.SetBool("isJumping", true);
+        }
+        else     
+            animator.SetBool("isJumping", false);
+        
+
+    }
+
+    public void CheckFireInput()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetBool("isCastingSpell", true);
+            castSpell.Play();
+        }
+
+        else 
+            animator.SetBool("isCastingSpell", false);
+        
+    }
+
+    public void CheckMeleeAttack()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            animator.SetBool("isAttack", true);
+            sword.Play();
+        }
+
+        else 
+        
+            animator.SetBool("isAttack", false);
+        
+    }
+
+    public void CheckPlayerHealth()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            animator.SetBool("isDead", true);
+
+            playerDeath.Play();
+        }
+        else
+            animator.SetBool("isDead", false);
     }
 }
 
