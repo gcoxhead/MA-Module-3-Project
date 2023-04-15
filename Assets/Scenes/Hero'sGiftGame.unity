@@ -43008,9 +43008,57 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7169646969367334857, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
+      propertyPath: m_Size.x
+      value: 0.95502657
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169646969367334857, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7711086
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169646969367334857, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
+      propertyPath: m_Size.z
+      value: 2.8407207
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169646969367334857, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
+      propertyPath: m_Center.x
+      value: 0.117043816
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169646969367334857, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
+      propertyPath: m_Center.y
+      value: -0.07025995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169646969367334857, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
+      propertyPath: m_Center.z
+      value: 1.1918269
+      objectReference: {fileID: 0}
     - target: {fileID: 7169646969847292272, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169646970378977017, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9550264
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169646970378977017, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6652371
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169646970378977017, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
+      propertyPath: m_Size.z
+      value: 2.3975115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169646970378977017, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
+      propertyPath: m_Center.x
+      value: 0.11702858
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169646970378977017, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
+      propertyPath: m_Center.y
+      value: 0.008270453
+      objectReference: {fileID: 0}
+    - target: {fileID: 7169646970378977017, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
+      propertyPath: m_Center.z
+      value: 0.97022706
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7169646969847292272, guid: 8c8914f38528a5649ab1909175cc8d4b, type: 3}
@@ -59285,7 +59333,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sword: {fileID: 1006261793}
   castSpell: {fileID: 1864773813}
+  takeDamage: {fileID: 0}
+  playerDeath: {fileID: 0}
   volume: 1
+  isHit: 0
+  finishedCoroutine: 1
 --- !u!136 &1756838203
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -59337,6 +59389,7 @@ MonoBehaviour:
     m_Bits: 64
   Bullet: {fileID: 1430291520443098902, guid: 17d9daf5131ae754bb2173c6c2e6b83d, type: 3}
   BulletSpeed: 50
+  animator: {fileID: 0}
 --- !u!1 &1759485553
 GameObject:
   m_ObjectHideFlags: 0

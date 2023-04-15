@@ -54,6 +54,12 @@ public class GameBehaviour : MonoBehaviour
     [SerializeField]
     public TMP_Text CrText;
 
+    [SerializeField]
+    public Animator playerAnimator;
+
+    [SerializeField]
+    public Animator enemyAnimator;
+
     public bool spellEnabled = false;
     
 

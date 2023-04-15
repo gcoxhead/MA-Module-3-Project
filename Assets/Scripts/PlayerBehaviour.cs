@@ -21,8 +21,12 @@ public class PlayerBehaviour : MonoBehaviour
     public GameObject Bullet;
     public float BulletSpeed = 100f;
     private bool _isShooting;
+    bool isHit = false;
 
     private GameBehaviour _gameManager;
+
+    [SerializeField]
+    Animator animator;
   
     void Start()
     {
@@ -30,6 +34,7 @@ public class PlayerBehaviour : MonoBehaviour
         _col = GetComponent<CapsuleCollider>();
         _gameManager = GameObject.Find("Game Manager").GetComponent<GameBehaviour>();
         //Debug.Log("Game object reference created");
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -86,25 +91,50 @@ public class PlayerBehaviour : MonoBehaviour
         {
             Vector3 capsuleBottom = new Vector3(_col.bounds.center.x, 
                 _col.bounds.min.y, _col.bounds.center.z);
+
             bool grounded = Physics.CheckCapsule(_col.bounds.center, 
                 capsuleBottom, DistanceToGround, GroundLayer, QueryTriggerInteraction.Ignore);
         
         return grounded;
         }
 
-    void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("EnemySword"))
+        if (other.gameObject.CompareTag("EnemySword"))
         {
             _gameManager.HP -= 4;
+
             Debug.Log("Enemy Damage Taken -4");
+            if(!isHit)
+            animator.SetBool("takenDamage", true);
+            Debug.Log("Damage Animation should play");
+            isHit = true;
         }
 
-        if (collision.gameObject.CompareTag("Spike"))
+        if (other.gameObject.CompareTag("Spike"))
         {
             _gameManager.HP -= 6;
             Debug.Log("That was sharp...-6 damage");
         }
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("EnemySword")&& isHit)
+        {
+
+            isHit = false;
+            animator.SetBool("takenDamage", false);
+            Debug.Log("Damage Animation should play");
+            
+        }
+
+        if (other.gameObject.CompareTag("Spike"))
+        {
+            _gameManager.HP -= 6;
+            Debug.Log("That was sharp...-6 damage");
+        }
+    }
+
 
 }
