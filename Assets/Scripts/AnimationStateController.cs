@@ -27,7 +27,6 @@ public class AnimationStateController : MonoBehaviour
     void Update()
     {
         CheckInputs();
-
     }
     public void CheckInputs()
     {
@@ -38,8 +37,8 @@ public class AnimationStateController : MonoBehaviour
         CheckMeleeAttack();
         CheckPlayerHealth();
         CheckHasExcaliber();
+        CheckForImpact();
         
-
     }
     public void CheckForwardInput()
     {
@@ -162,11 +161,23 @@ public class AnimationStateController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F))
         {
             animator.SetBool("hasExcaliber", true);
-
-            playerDeath.Play();
+            
+            
         }
         else
             animator.SetBool("hasExcaliber", false);
+    }
+
+    public void CheckForImpact()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            animator.SetBool("takenDamage", true);
+            takeDamage.Play();
+
+        }
+        else
+            animator.SetBool("takenDamage", false);
     }
 }
 
