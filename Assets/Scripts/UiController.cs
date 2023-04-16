@@ -18,6 +18,7 @@ public class UiController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             TitleUi();
             DisableInventory();
+            DisableMiniMap();
         }
     }
 
@@ -27,6 +28,7 @@ public class UiController : MonoBehaviour
     private bool inventoryActive = false;
     private bool questUiActive = false;
     private bool pauseUiActive = false;
+    private bool miniMapUiActive = false;
     public bool damageUiActive = false;
 
     [SerializeField]
@@ -95,6 +97,20 @@ public class UiController : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (!miniMapUiActive)
+            {
+                _UI[12].SetActive(true);
+                miniMapUiActive = true;
+            }
+            else
+            {
+                _UI[12].SetActive(false);
+                miniMapUiActive = false;
+            }
+
+        }
 
 
     }
@@ -260,6 +276,15 @@ public class UiController : MonoBehaviour
     {
         _UI[6].SetActive(false);
         inventoryActive = false;
+    }
+
+    public void DisableMiniMap()
+    {
+        _UI[12].SetActive(false);
+    }
+    public void EnableMiniMap()
+    {
+        _UI[12].SetActive(true);
     }
 
 
