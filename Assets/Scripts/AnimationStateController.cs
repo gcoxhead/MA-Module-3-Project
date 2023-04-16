@@ -47,7 +47,8 @@ public class AnimationStateController : MonoBehaviour
 
         }
         else
-            animator.SetBool("takenDamage", false);
+            ;
+            //animator.SetBool("takenDamage", false);
 
     }
     public void CheckForwardInput()

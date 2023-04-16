@@ -27,6 +27,9 @@ public class ItemExcaliber: MonoBehaviour
     [SerializeField]
     private AudioManager audioBehaviour;
 
+    [SerializeField]
+    private Animator animator;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -42,7 +45,8 @@ public class ItemExcaliber: MonoBehaviour
             PlayParticles();
             _playerWeapon.SetActive(false);
             _playerExcaliberWeapon.SetActive(true);
-            
+            animator.SetBool("hasExcaliber", true);
+
             Debug.Log("Excaliber Collected!");
             //GameManager.Items += 1;
             ProgressText.text = "Quest Complete!";
