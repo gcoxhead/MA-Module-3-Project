@@ -61,6 +61,7 @@ public class GameBehaviour : MonoBehaviour
     public Animator enemyAnimator;
 
     public bool spellEnabled = false;
+    public bool hasKey = true;
     
 
     // Start is called before the first frame update
@@ -73,10 +74,7 @@ public class GameBehaviour : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKey("escape"))
-       // {
-            //Application.Quit();
-        //}
+      
 
     }
 

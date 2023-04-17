@@ -16,7 +16,8 @@ public class UiController : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            TitleUi();
+            //TitleUi();
+            MenuUI();
             DisableInventory();
             DisableMiniMap();
         }
