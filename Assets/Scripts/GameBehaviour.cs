@@ -61,7 +61,7 @@ public class GameBehaviour : MonoBehaviour
     public Animator enemyAnimator;
 
     public bool spellEnabled = false;
-    public bool hasKey = true;
+    public bool hasKey = false;
     
 
     // Start is called before the first frame update
