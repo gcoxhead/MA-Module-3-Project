@@ -24,8 +24,8 @@ public class UiController : MonoBehaviour
     }
 
     [SerializeField]
-
     private GameObject[] _UI;
+
     private bool inventoryActive = false;
     private bool questUiActive = false;
     private bool pauseUiActive = false;
@@ -38,6 +38,11 @@ public class UiController : MonoBehaviour
     [SerializeField]
     private FadeUI fadeUI;
 
+    [SerializeField]
+    private GameObject swords;
+
+    [SerializeField]
+    private GameObject shields;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
@@ -189,6 +194,8 @@ public class UiController : MonoBehaviour
         _UI[7].SetActive(false);
         _UI[10].SetActive(false);
         _UI[11].SetActive(false);
+        swords.SetActive(false);
+        shields.SetActive(false);
     }
 
     public void GamePlayHUD()
@@ -202,6 +209,8 @@ public class UiController : MonoBehaviour
         _UI[7].SetActive(false);
         _UI[10].SetActive(false);
         _UI[11].SetActive(false);
+        swords.SetActive(false);
+        shields.SetActive(false);
     }
     
     public void ShopUI()
