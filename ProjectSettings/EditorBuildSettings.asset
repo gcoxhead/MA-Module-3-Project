@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Hero'sGiftGame.unity
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 66398d4b63fbdd3419d860735cb56370
+  - enabled: 1
+    path: Assets/Scenes/Hero'sGift.unity
     guid: b3e32288dd5641547bd749effeffc3b4
   m_configObjects: {}
