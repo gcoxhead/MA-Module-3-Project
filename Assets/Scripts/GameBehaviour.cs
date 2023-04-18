@@ -60,8 +60,12 @@ public class GameBehaviour : MonoBehaviour
     [SerializeField]
     public Animator enemyAnimator;
 
+    [SerializeField]
+    public Animator HudAnimator;
+
     public bool spellEnabled = false;
     public bool hasKey = false;
+    public bool hasExcalibur = false;
     
 
     // Start is called before the first frame update
@@ -72,13 +76,7 @@ public class GameBehaviour : MonoBehaviour
         CrText.text = ""+ _credits;
     }
 
-    private void Update()
-    {
-      
-
-    }
-
-    public int Items
+   public int Items
     {
         get { return _itemsCollected; }
         set
@@ -129,14 +127,20 @@ public class GameBehaviour : MonoBehaviour
             if(_playerHP <=0)
             {
                 ProgressText.text = ("You failed your mission...");
-                //respawn
+                playerAnimator.SetTrigger("killPlayer");
+                //playerAnimator.Play("Base Layer.PlayerDeath", 0, 0);
+                //playerAnimator.SetBool("isDead", true);
+                //HudAnimator.Play();
+                
                 //RestartSceneButton.gameObject.SetActive(true);
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
             }
 
             else
             {
                 ProgressText.text = "Player damage taken";
+                playerAnimator.SetTrigger("takeDamage");
+
                 healthBar.SetHealth(_playerHP);
             } 
 
@@ -157,11 +161,11 @@ public class GameBehaviour : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    //public void NextScene()
+    public void NextScene()
 
-   // {
-    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-      //  Time.timeScale = 1f;
-    //}*/
+        Time.timeScale = 1f;
+    }
 }

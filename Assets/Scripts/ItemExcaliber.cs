@@ -39,23 +39,30 @@ public class ItemExcaliber: MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Player")
+        if(GameManager.spellEnabled == true)
         {
+            if (collision.gameObject.name == "Player")
+            {
 
-            PlayParticles();
-            _playerWeapon.SetActive(false);
-            _playerExcaliberWeapon.SetActive(true);
-            animator.SetBool("hasExcaliber", true);
+                PlayParticles();
+                GameManager.hasExcalibur = true;
+                _playerWeapon.SetActive(false);
+                _playerExcaliberWeapon.SetActive(true);
 
-            Debug.Log("Excaliber Collected!");
-            //GameManager.Items += 1;
-            ProgressText.text = "Quest Complete!";
+                animator.SetTrigger("trigExcaliber");
 
-            audioBehaviour.playQuestComplete();
-            
-            Instantiate(_excaliberParticles, gameObject.transform.position, Quaternion.identity);
-            Destroy(this.transform.gameObject);
+                Debug.Log("Excaliber Collected!");
+                //GameManager.Items += 1;
+                ProgressText.text = "Quest Complete! Escape to merlins cave.";
+
+                audioBehaviour.playQuestComplete();
+
+                Instantiate(_excaliberParticles, gameObject.transform.position, Quaternion.identity);
+                Destroy(this.transform.gameObject);
+            }
+
         }
+        
 
 
     }

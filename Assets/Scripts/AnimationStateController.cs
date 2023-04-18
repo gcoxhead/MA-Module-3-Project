@@ -157,14 +157,7 @@ public class AnimationStateController : MonoBehaviour
 
     public void CheckPlayerHealth()
     {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            animator.SetBool("isDead", true);
-
-            playerDeath.Play();
-        }
-        else
-            animator.SetBool("isDead", false);
+        
     }
 
     public void CheckHasExcaliber()
