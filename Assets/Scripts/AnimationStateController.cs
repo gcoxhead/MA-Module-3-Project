@@ -40,15 +40,7 @@ public class AnimationStateController : MonoBehaviour
         CheckPlayerHealth();
         CheckHasExcaliber();
         //CheckForImpact();
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            animator.SetBool("takenDamage", true);
-            takeDamage.Play();
-
-        }
-        else
-            ;
-            //animator.SetBool("takenDamage", false);
+        
 
     }
     public void CheckForwardInput()
@@ -172,63 +164,7 @@ public class AnimationStateController : MonoBehaviour
             animator.SetBool("hasExcaliber", false);
     }
 
-    /*public void CheckForImpact()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            animator.SetBool("takenDamage", true);
-            takeDamage.Play();
-
-        }
-        else
-            animator.SetBool("takenDamage", false);
-    }*/
-
-
-    /*void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("EnemySword")&& !isHit) //|(other.gameObject.CompareTag("EnemySword"))))
-        {
-            
-            animator.SetBool("takenDamage", true);
-            isHit = true;
-        }
-
-        else if (other.gameObject.CompareTag("Spike")&& !isHit)
-        {
-            
-            animator.SetBool("takenDamage", true);
-            isHit = true;
-        }
-    }*/
-
-    /*void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("EnemySword"))   //|(other.gameObject.CompareTag("EnemySword"))))
-        {
-
-            isHit = false;
-            animator.SetBool("takenDamage", false);
-           
-        }
-
-        if (other.gameObject.CompareTag("Spike"))// && isHit)
-        {
-            isHit = false;
-            animator.SetBool("takenDamage", false);
-        }   
-
-
-    }*/
-    /*IEnumerator damageMyPlayer()
-    {
-        animator.SetBool("takenDamage", true);
-
-        yield return new WaitForSeconds(0.5f);
-        finishedCoroutine = true;
-        print("MyCoroutine is now finished.");
-
-    }*/
+    
 }
 
 
