@@ -24,4 +24,12 @@ public class TitleManager : MonoBehaviour
 
          Time.timeScale = 1f;
     }
+
+    public void ReloadGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);
+
+        Time.timeScale = 1f;
+
+    }
 }

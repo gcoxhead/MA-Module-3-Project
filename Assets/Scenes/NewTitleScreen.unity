@@ -1102,6 +1102,8 @@ MonoBehaviour:
   damageUiActive: 0
   inventoryManager: {fileID: 0}
   fadeUI: {fileID: 0}
+  swords: {fileID: 0}
+  shields: {fileID: 0}
 --- !u!4 &745053619
 Transform:
   m_ObjectHideFlags: 0
@@ -2077,7 +2079,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 758e3716b5fdeed488aab19ba04c1aad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e845c718d4d28b945aca6e0674cdcb02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
