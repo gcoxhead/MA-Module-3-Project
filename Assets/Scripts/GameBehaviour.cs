@@ -88,9 +88,7 @@ public class GameBehaviour : MonoBehaviour
             if (_itemsCollected >= MaxItems)
             {
                 ProgressText.text = "You've found all the potions! Unlock excaliber";
-                //NextSceneButton.gameObject.SetActive(true);
                 spellEnabled = true;
-                //Time.timeScale = 0f;
             }
             else
             {
@@ -128,19 +126,12 @@ public class GameBehaviour : MonoBehaviour
             {
                 ProgressText.text = ("You failed your mission...");
                 playerAnimator.SetTrigger("killPlayer");
-                //playerAnimator.Play("Base Layer.PlayerDeath", 0, 0);
-                //playerAnimator.SetBool("isDead", true);
-                //HudAnimator.Play();
-                
-                //RestartSceneButton.gameObject.SetActive(true);
-                //Time.timeScale = 0;
             }
 
             else
             {
                 ProgressText.text = "Player damage taken";
                 playerAnimator.SetTrigger("takeDamage");
-
                 healthBar.SetHealth(_playerHP);
             } 
 

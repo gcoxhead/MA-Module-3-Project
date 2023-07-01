@@ -54,7 +54,6 @@ public class CauldronBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-
         //Detect if player collides with the trap collider
         if (other.CompareTag("Player"))
         {

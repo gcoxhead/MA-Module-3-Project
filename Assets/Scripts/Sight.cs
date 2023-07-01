@@ -10,12 +10,7 @@ public class Sight : MonoBehaviour
     public LayerMask obstaclesLayers;
     public Collider detectedObject;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -53,13 +48,16 @@ public class Sight : MonoBehaviour
 
     void OnDrawGizmos()
     {
+        //Detection distance for enemy
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, distance);
 
+        //Right sight limit of enemy
         Gizmos.color = Color.blue;
         Vector3 rightDirection = Quaternion.Euler(0, angle, 0) * transform.forward;
         Gizmos.DrawRay(transform.position, rightDirection * distance);
 
+        //Left sight limit of enemy
         Gizmos.color = Color.green;
         Vector3 leftDirection = Quaternion.Euler(0, -angle, 0) * transform.forward;
         Gizmos.DrawRay(transform.position, leftDirection * distance);
